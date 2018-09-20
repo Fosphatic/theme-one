@@ -5,8 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= $view->render('head') ?>
-        <?php $view->style('theme', 'theme:css/theme.css') ?>
-        <?php $view->script('theme', 'theme:js/theme.js', ['uikit-sticky',  'uikit-lightbox',  'uikit-parallax']) ?>
+        <?= $view->style('theme' , 'theme:assets/css/uikit.themeone.min.css') ?>
+        <?= $view->style('theme' , 'theme:assets/css/uikit.themone.css') ?>
+        <?= $view->script('theme-js' , 'theme:assets/js/uikit.min.js' , ['jquery']) ?>
+        <?= $view->script('theme-migrate-js' , 'theme:assets/js/migrate.min.js' , ['jquery']) ?>
+        <?= $view->script('theme-icons' , 'theme:assets/js/uikit-icons.min.js' , ['jquery' , 'theme-js']) ?>
     </head>
     <body>
 
