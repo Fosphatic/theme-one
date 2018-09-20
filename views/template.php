@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= $view->render('head') ?>
         <?= $view->style('theme' , 'theme:assets/css/uikit.themeone.min.css') ?>
-        <?= $view->style('theme' , 'theme:assets/css/uikit.themone.css') ?>
+        <?= $view->style('theme' , 'theme:assets/css/uikit.themeone.css') ?>
         <?= $view->script('theme-js' , 'theme:assets/js/uikit.min.js' , ['jquery']) ?>
         <?= $view->script('theme-migrate-js' , 'theme:assets/js/migrate.min.js' , ['jquery']) ?>
         <?= $view->script('theme-icons' , 'theme:assets/js/uikit-icons.min.js' , ['jquery' , 'theme-js']) ?>
