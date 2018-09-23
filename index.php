@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'theme-one',
+    'name' => 'uikit3-theme-one',
 
     /**
      * Menu positions
@@ -115,7 +115,7 @@ return [
 
             $sticky = [
                 'media' => 767,
-                'showup' => true,
+                'show-on-up' => true,
                 'animation' => 'uk-animation-slide-top'
             ];
 
