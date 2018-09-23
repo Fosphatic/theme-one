@@ -1,5 +1,5 @@
 {
-  "name": "theme-one",
+  "name": "uiki3-theme-one",
   "dependencies": {
     "uikit": "#master"
   },

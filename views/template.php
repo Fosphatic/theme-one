@@ -17,7 +17,7 @@
         <div class="<?= $params['classes.navbar'] ?>" <?= $params['classes.sticky'] ?>>
 
             <div class="uk-container uk-container-center">
-              <nav class="uk-navbar-container" uk-navbar>
+              <nav class="uk-navbar-container" data-uk-navbar>
                 <div class="uk-navbar-left">
                     <a class="uk-navbar-brand" href="<?= $view->url()->get() ?>">
                         <?php if ($params['logo']) : ?>
@@ -48,10 +48,10 @@
         <?php endif ?>
 
         <?php if ($view->position()->exists('hero')) : ?>
-        <div id="tm-hero" class="tm-hero uk-block uk-block-large uk-cover-background uk-flex uk-flex-middle <?= $params['classes.hero'] ?>" <?= $params['hero_image'] ? "style=\"background-image: url('{$view->url($params['hero_image'])}');\"" : '' ?> <?= $params['classes.parallax'] ?>>
+        <div id="tm-hero" class="tm-hero uk-block uk-block-large uk-cover-container uk-cover-background uk-flex uk-flex-middle <?= $params['classes.hero'] ?>" <?= $params['hero_image'] ? "style=\"background-image: url('{$view->url($params['hero_image'])}');\"" : '' ?> <?= $params['classes.parallax'] ?>>
             <div class="uk-container uk-container-center">
 
-                <section class="uk-grid uk-grid-match" data-uk-grid-margin>
+                <section class="uk-grid-match" data-uk-grid-margin>
                     <?= $view->position('hero', 'position-grid.php') ?>
                 </section>
 
@@ -74,14 +74,14 @@
         <div id="tm-main" class="tm-main uk-block <?= $params['main_style'] ?>">
             <div class="uk-container uk-container-center">
 
-                <div class="uk-grid" data-uk-grid-match data-uk-grid-margin>
+                <div class="uk-grid-match" data-uk-grid data-uk-margin>
 
-                    <main class="<?= $view->position()->exists('sidebar') ? 'uk-width-medium-3-4' : 'uk-width-1-1'; ?>">
+                    <main class="<?= $view->position()->exists('sidebar') ? 'uk-width-3-4' : 'uk-width-1-1'; ?>">
                         <?= $view->render('content') ?>
                     </main>
 
                     <?php if ($view->position()->exists('sidebar')) : ?>
-                    <aside class="uk-width-medium-1-4 <?= $params['sidebar_first'] ? 'uk-flex-order-first-medium' : ''; ?>">
+                    <aside class="uk-width-1-4 <?= $params['sidebar_first'] ? 'uk-flex-first@m' : ''; ?>">
                         <?= $view->position('sidebar', 'position-panel.php') ?>
                     </aside>
                     <?php endif ?>
