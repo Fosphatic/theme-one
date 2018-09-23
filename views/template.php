@@ -12,13 +12,13 @@
         <?= $view->script('theme-icons' , 'theme:assets/js/uikit-icons.min.js' , ['jquery' , 'theme-js']) ?>
     </head>
     <body>
-
+        <div class="uk-offcanvas-content">
         <?php if ($params['logo'] || $view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
         <div class="<?= $params['classes.navbar'] ?>" <?= $params['classes.sticky'] ?>>
+
             <div class="uk-container uk-container-center">
-
-                <nav class="uk-navbar">
-
+              <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left">
                     <a class="uk-navbar-brand" href="<?= $view->url()->get() ?>">
                         <?php if ($params['logo']) : ?>
                             <img class="tm-logo uk-responsive-height" src="<?= $this->escape($params['logo']) ?>" alt="">
@@ -27,17 +27,17 @@
                             <?= $params['title'] ?>
                         <?php endif ?>
                     </a>
-
+                </div>
                     <?php if ($view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
-                    <div class="uk-navbar-flip uk-hidden-small">
+                    <div class="uk-navbar-right uk-visible@s">
                         <?= $view->menu('main', 'menu-navbar.php') ?>
                         <?= $view->position('navbar', 'position-blank.php') ?>
                     </div>
                     <?php endif ?>
 
                     <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
-                    <div class="uk-navbar-flip uk-visible-small">
-                        <a href="#offcanvas" class="uk-navbar-toggle" data-uk-offcanvas></a>
+                    <div class="uk-navbar-right uk-hidden@s">
+                        <a href="#offcanvas-nav" class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"></a>
                     </div>
                     <?php endif ?>
 
@@ -116,8 +116,9 @@
         <?php endif; ?>
 
         <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
-        <div id="offcanvas" class="uk-offcanvas">
-            <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+
+        <div id="offcanvas-nav" uk-offcanvas="mode: push; flip: true; overlay: true">
+            <div class="uk-offcanvas-bar">
 
                 <?php if ($params['logo_offcanvas']) : ?>
                 <div class="uk-panel uk-text-center">
@@ -140,6 +141,6 @@
         <?php endif ?>
 
         <?= $view->render('footer') ?>
-
+        </div>
     </body>
 </html>
